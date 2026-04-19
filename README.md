@@ -54,11 +54,4 @@ src/
 **Roll No.** — 2305124
 **Program** — B.Tech CSE 2027
 
-To generate the final submission files locally:
-```powershell
-# Create the PDF report
-powershell -ExecutionPolicy Bypass -File .\scripts\generate-report-pdf.ps1
 
-# Create the final ZIP package
-powershell -ExecutionPolicy Bypass -File .\scripts\create-submission-zip.ps1
-```
