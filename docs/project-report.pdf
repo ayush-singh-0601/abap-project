@@ -1,0 +1,188 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+2 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Length 2580 >>
+stream
+BT /F2 15 Tf 1 0 0 1 78.00 800.00 Tm (Purchase Order Analytics and Vendor Overview using Custom ALV Report) Tj ET
+BT /F2 12 Tf 1 0 0 1 48.00 770.00 Tm (Name: Ayush Singh) Tj ET
+BT /F2 12 Tf 1 0 0 1 48.00 752.00 Tm (Roll Number: 2305124) Tj ET
+BT /F2 12 Tf 1 0 0 1 48.00 734.00 Tm (Batch/Program: B.Tech CSE 2027) Tj ET
+BT /F2 12 Tf 1 0 0 1 48.00 716.00 Tm (Project Topic: Real ABAP Development Scenario - Custom ALV Reports) Tj ET
+BT /F2 14 Tf 1 0 0 1 48.00 688.00 Tm (Problem Statement) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 666.00 Tm (In SAP MM environments, procurement users often need to open multiple transactions to review) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 650.00 Tm (purchase order details, vendor information, material descriptions, delivery timelines, and) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 634.00 Tm (item values. This slows daily work and makes it harder to identify delayed or urgent orders) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 618.00 Tm (quickly.) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 598.00 Tm (The business need is to create consolidated reports where buyers and procurement) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 582.00 Tm (coordinators can review all critical purchasing information in a single screen and take) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 566.00 Tm (follow-up action faster.) Tj ET
+BT /F2 14 Tf 1 0 0 1 48.00 546.00 Tm (Project Objective) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 524.00 Tm (The objective of this project is to build a suite of executable ABAP reports centered on) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 508.00 Tm (ZMM_PO_ANALYTICS_ALV that read standard MM purchasing data, display them in ALV outputs with) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 492.00 Tm (useful filters, calculated delivery status, drilldown support, vendor performance metrics,) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 476.00 Tm (and delivery tracking.) Tj ET
+BT /F2 14 Tf 1 0 0 1 48.00 456.00 Tm (Project Summary) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 434.00 Tm (This capstone project focuses on practical MM reporting scenarios. It includes a main PO) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 418.00 Tm (analytics report, a vendor performance scorecard, and a delivery tracking tool. The codebase) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 402.00 Tm (demonstrates common ABAP skills such as selection-screen design, Open SQL joins, internal-) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 386.00 Tm (table processing, ALV display handling, local class-based event handling, and business-rule) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 370.00 Tm (implementation while keeping the scope manageable.) Tj ET
+BT /F1 11 Tf 1 0 0 1 505.00 22.00 Tm (Page 1) Tj ET
+endstream
+endobj
+4 0 obj
+<< /Length 2962 >>
+stream
+BT /F2 14 Tf 1 0 0 1 48.00 800.00 Tm (Solution / Features) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 778.00 Tm (- Selection screen filters for company code, purchasing organization, vendor, PO number,) Tj ET
+BT /F1 12 Tf 1 0 0 1 62.00 762.00 Tm (material, and PO date.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 744.00 Tm (- Data extraction from EKKO, EKPO, LFA1, MAKT, and EKET using Open SQL joins.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 726.00 Tm (- ALV output showing vendor, material, quantity, value, delivery date, and item-level) Tj ET
+BT /F1 12 Tf 1 0 0 1 62.00 710.00 Tm (status.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 692.00 Tm (- Status calculation: Deleted, Completed, No Schedule, Overdue, Due Soon, and On Time.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 674.00 Tm (- Hotspot click on PO number to open ME23N; double-click on vendor to open XK03.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 656.00 Tm (- Vendor performance scorecard with total POs, total value, and on-time delivery) Tj ET
+BT /F1 12 Tf 1 0 0 1 62.00 640.00 Tm (percentage.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 622.00 Tm (- Delivery tracker with days-remaining counter, urgency levels, and status-based) Tj ET
+BT /F1 12 Tf 1 0 0 1 62.00 606.00 Tm (filtering.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 588.00 Tm (- Modular code design with include programs \(TOP, F01, CL\) following ABAP conventions.) Tj ET
+BT /F2 14 Tf 1 0 0 1 48.00 570.00 Tm (Tech Stack) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 548.00 Tm (- SAP ABAP) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 530.00 Tm (- SAP MM purchasing data model \(EKKO, EKPO, LFA1, MAKT, EKET\)) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 512.00 Tm (- CL_SALV_TABLE for ALV output \(ALV Object Model\)) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 494.00 Tm (- Modular programming with include programs) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 476.00 Tm (- Git and GitHub for repository hosting) Tj ET
+BT /F2 14 Tf 1 0 0 1 48.00 458.00 Tm (ABAP Programs) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 436.00 Tm (The project consists of 6 ABAP programs: 3 executable reports and 3 include programs.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 416.00 Tm (- ZMM_PO_ANALYTICS_ALV - Main PO Analytics Report with vendor and delivery details.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 398.00 Tm (- ZMM_PO_ANALYTICS_TOP - Include: type definitions, constants, selection screen, global) Tj ET
+BT /F1 12 Tf 1 0 0 1 62.00 382.00 Tm (data.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 364.00 Tm (- ZMM_PO_ANALYTICS_F01 - Include: form routines for data retrieval, status logic, ALV) Tj ET
+BT /F1 12 Tf 1 0 0 1 62.00 348.00 Tm (config.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 330.00 Tm (- ZMM_PO_ANALYTICS_CL  - Include: local class for hotspot and double-click event handling.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 312.00 Tm (- ZMM_VENDOR_SCORECARD  - Vendor performance scorecard with on-time delivery percentage.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 294.00 Tm (- ZMM_PO_DELIVERY_TRACKER - Delivery tracking with days remaining and urgency levels.) Tj ET
+BT /F1 11 Tf 1 0 0 1 505.00 22.00 Tm (Page 2) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Length 2960 >>
+stream
+BT /F2 14 Tf 1 0 0 1 48.00 800.00 Tm (Data Flow and Business Logic) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 778.00 Tm (The user enters filter values on the selection screen. The report reads purchase order data) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 762.00 Tm (from EKKO and EKPO, vendor information from LFA1, material descriptions from MAKT, and) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 746.00 Tm (schedule line dates from EKET. The program enriches the dataset in internal tables and) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 730.00 Tm (prepares it for ALV display.) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 710.00 Tm (Status logic is applied item by item. If the deletion indicator is set, the report shows) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 694.00 Tm (Deleted. If delivery is completed, it shows Completed. If no schedule line exists, it shows) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 678.00 Tm (No Schedule. Otherwise the delivery date is compared with the current system date to) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 662.00 Tm (determine Overdue, Due Soon, or On Time.) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 642.00 Tm (The vendor scorecard aggregates item-level data by vendor number, counting distinct POs,) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 626.00 Tm (summing net values, and computing on-time delivery percentages. The delivery tracker) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 610.00 Tm (calculates days remaining until delivery \(negative values indicate overdue\) and assigns) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 594.00 Tm (urgency levels for quick prioritization.) Tj ET
+BT /F2 14 Tf 1 0 0 1 48.00 574.00 Tm (Unique Points) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 552.00 Tm (- Balanced complexity for an ABAP capstone: practical, working, and explainable.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 534.00 Tm (- Three complementary reports covering analytics, vendor scoring, and delivery tracking.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 516.00 Tm (- Modular code design with separate include programs following ABAP conventions.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 498.00 Tm (- Uses standard SAP MM tables so results can be validated easily in a training system.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 480.00 Tm (- Combines reporting, aggregation, event handling, and business status calculation.) Tj ET
+BT /F2 14 Tf 1 0 0 1 48.00 462.00 Tm (Why This Topic Fits an ABAP Developer) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 440.00 Tm (This project directly reflects day-to-day ABAP enhancement work. It demonstrates selection-) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 424.00 Tm (screen design, Open SQL joins, internal table processing, ALV formatting, local class event) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 408.00 Tm (handling, and business rule implementation. The multi-report approach shows the ability to) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 392.00 Tm (work across related tools within the same functional domain while avoiding unnecessary) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 376.00 Tm (complexity.) Tj ET
+BT /F1 11 Tf 1 0 0 1 505.00 22.00 Tm (Page 3) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Length 639 >>
+stream
+BT /F2 14 Tf 1 0 0 1 48.00 800.00 Tm (Screenshots) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 778.00 Tm (Replace these placeholders with actual screenshots from your SAP system before final) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 762.00 Tm (submission.) Tj ET
+48.00 620.00 499.00 150.00 re S
+BT /F2 12 Tf 1 0 0 1 150.00 694.00 Tm (Selection Screen Screenshot Placeholder) Tj ET
+48.00 440.00 499.00 150.00 re S
+BT /F2 12 Tf 1 0 0 1 150.00 514.00 Tm (ALV Output Screenshot Placeholder) Tj ET
+48.00 260.00 499.00 150.00 re S
+BT /F2 12 Tf 1 0 0 1 150.00 334.00 Tm (PO Drilldown Screenshot Placeholder) Tj ET
+BT /F1 11 Tf 1 0 0 1 505.00 22.00 Tm (Page 4) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Length 2099 >>
+stream
+BT /F2 14 Tf 1 0 0 1 48.00 800.00 Tm (Future Improvements) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 778.00 Tm (- Add traffic-light icons and color-based status indicators.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 760.00 Tm (- Add vendor-wise and plant-wise subtotals.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 742.00 Tm (- Add authorization-based filtering using purchasing organization rules.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 724.00 Tm (- Add Excel-friendly export customization.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 706.00 Tm (- Add saved ALV layouts and variants.) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 688.00 Tm (- Integrate goods receipt data for three-way match analysis.) Tj ET
+BT /F2 14 Tf 1 0 0 1 48.00 670.00 Tm (Conclusion) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 648.00 Tm (This project provides a practical SAP MM reporting solution developed with standard ABAP) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 632.00 Tm (techniques. The combination of a detailed PO analytics report, a vendor performance) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 616.00 Tm (scorecard, and a delivery tracking tool demonstrates well-rounded ABAP development skills) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 600.00 Tm (suitable for real-world SAP support and enhancement work.) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 580.00 Tm (The modular code structure with include programs follows professional ABAP conventions and) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 564.00 Tm (makes the codebase maintainable and easy to extend. Before final submission, replace) Tj ET
+BT /F1 12 Tf 1 0 0 1 48.00 548.00 Tm (placeholder screenshot areas with real values from your SAP environment.) Tj ET
+BT /F2 14 Tf 1 0 0 1 48.00 528.00 Tm (Submission Details) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 506.00 Tm (- Student: Ayush Singh | Roll Number: 2305124 | Program: B.Tech CSE 2027) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 488.00 Tm (- ABAP Programs: 6 \(3 reports + 3 includes\)) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 470.00 Tm (- SAP Tables: EKKO, EKPO, LFA1, MAKT, EKET) Tj ET
+BT /F1 12 Tf 1 0 0 1 50.00 452.00 Tm (- GitHub repository is public and accessible.) Tj ET
+BT /F1 11 Tf 1 0 0 1 505.00 22.00 Tm (Page 5) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Pages /Count 5 /Kids [9 0 R 10 0 R 11 0 R 12 0 R 13 0 R] >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 3 0 R >>
+endobj
+10 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 4 0 R >>
+endobj
+11 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 5 0 R >>
+endobj
+12 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 6 0 R >>
+endobj
+13 0 obj
+<< /Type /Page /Parent 8 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 1 0 R /F2 2 0 R >> >> /Contents 7 0 R >>
+endobj
+14 0 obj
+<< /Type /Catalog /Pages 8 0 R >>
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000015 00000 n 
+0000000085 00000 n 
+0000000160 00000 n 
+0000002792 00000 n 
+0000005806 00000 n 
+0000008818 00000 n 
+0000009508 00000 n 
+0000011659 00000 n 
+0000011744 00000 n 
+0000011880 00000 n 
+0000012017 00000 n 
+0000012154 00000 n 
+0000012291 00000 n 
+0000012428 00000 n 
+trailer
+<< /Size 15 /Root 14 0 R >>
+startxref
+12478
+%%EOF

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Order Analytics and Vendor Overview using Custom ALV Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #111;
+      background: #d8dde6;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto 10mm;
+      padding: 18mm 16mm 20mm 16mm;
+      background: #fff;
+      position: relative;
+      page-break-after: always;
+    }
+
+    .page:last-child {
+      page-break-after: auto;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 16px 0 8px;
+      font-size: 14px;
+    }
+
+    p, li {
+      text-align: justify;
+      margin: 0 0 8px;
+    }
+
+    ul {
+      margin: 0 0 10px 18px;
+      padding: 0;
+    }
+
+    .meta {
+      margin-bottom: 18px;
+    }
+
+    .meta-row {
+      margin-bottom: 5px;
+    }
+
+    .hero {
+      border: 1px solid #bfc7d4;
+      background: linear-gradient(135deg, #f7f9fc, #eef3fa);
+      padding: 12px;
+      margin-bottom: 14px;
+    }
+
+    .callout {
+      border-left: 4px solid #335c81;
+      background: #f4f8fb;
+      padding: 10px 12px;
+      margin: 12px 0;
+    }
+
+    .screenshot-box {
+      border: 1px dashed #6b7785;
+      background: #fafbfd;
+      min-height: 82mm;
+      margin: 10px 0 14px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #4d5966;
+      font-size: 12px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .card {
+      border: 1px solid #d7dde7;
+      padding: 10px;
+      background: #fcfdff;
+    }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 11px;
+    }
+
+    table.data-table th,
+    table.data-table td {
+      border: 1px solid #d0d5dd;
+      padding: 5px 8px;
+      text-align: left;
+    }
+
+    table.data-table th {
+      background: #f0f3f7;
+      font-weight: bold;
+    }
+
+    .footer {
+      position: absolute;
+      right: 16mm;
+      bottom: 8mm;
+      font-size: 11px;
+    }
+  </style>
+</head>
+<body>
+  <section class="page">
+    <h1>Purchase Order Analytics and Vendor Overview using Custom ALV Report</h1>
+
+    <div class="meta">
+      <div class="meta-row"><strong>Name:</strong> Ayush Singh</div>
+      <div class="meta-row"><strong>Roll Number:</strong> 2305124</div>
+      <div class="meta-row"><strong>Batch/Program:</strong> B.Tech CSE 2027</div>
+      <div class="meta-row"><strong>Project Topic:</strong> Real ABAP Development Scenario — Custom ALV Reports</div>
+    </div>
+
+    <div class="hero">
+      <p>This capstone project delivers a suite of practical SAP ABAP reporting solutions for the MM purchasing process. The reports consolidate purchase order header, item, vendor, material, and delivery schedule information into ALV outputs so that procurement users can review order progress, track deliveries, and evaluate vendor performance without navigating across multiple transactions.</p>
+    </div>
+
+    <h2>Problem Statement</h2>
+    <p>In day-to-day procurement operations, users often need to review purchase order details, vendor names, material descriptions, planned delivery dates, and value information quickly. In many cases this information is spread across more than one SAP screen or transaction. As a result, users spend more time navigating than analyzing. This project addresses that issue by building custom ALV reports that present critical purchasing data in business-friendly outputs.</p>
+    <p>The problem is especially relevant for buyers and procurement coordinators who need to track due items, identify delays, evaluate vendor reliability, and review orders efficiently. Consolidated and searchable reports improve visibility and support faster follow-up actions.</p>
+
+    <h2>Project Objective</h2>
+    <p>The objective of this project is to create a set of executable ABAP reports centered on <strong>ZMM_PO_ANALYTICS_ALV</strong> that read standard SAP MM purchasing data and display it through ALV grids with meaningful filters, calculated delivery status, drilldown capability, vendor performance metrics, and delivery tracking.</p>
+
+    <div class="callout">
+      <p><strong>Main outcome:</strong> A suite of medium-complexity, working ABAP programs that demonstrate real development capability and are practical enough for capstone evaluation and verbal explanation during the project test.</p>
+    </div>
+
+    <div class="footer">Page 1</div>
+  </section>
+
+  <section class="page">
+    <h2>Solution Overview</h2>
+    <p>The solution consists of three ABAP reports and three include programs, all designed using <strong>CL_SALV_TABLE</strong> for ALV output. Each report provides a selection screen for procurement-related filters and retrieves data from standard SAP tables. The codebase follows modular ABAP conventions with separate includes for type definitions, form routines, and local classes.</p>
+
+    <h2>ABAP Programs</h2>
+    <table class="data-table">
+      <tr>
+        <th>Program</th>
+        <th>Type</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td>ZMM_PO_ANALYTICS_ALV</td>
+        <td>Main Report</td>
+        <td>PO Analytics with vendor &amp; material details, delivery status, hotspot drilldown</td>
+      </tr>
+      <tr>
+        <td>ZMM_PO_ANALYTICS_TOP</td>
+        <td>Include</td>
+        <td>Type definitions, constants, selection screen, global data</td>
+      </tr>
+      <tr>
+        <td>ZMM_PO_ANALYTICS_F01</td>
+        <td>Include</td>
+        <td>Form routines for data retrieval, enrichment, status logic, ALV config</td>
+      </tr>
+      <tr>
+        <td>ZMM_PO_ANALYTICS_CL</td>
+        <td>Include</td>
+        <td>Local class for hotspot click and double-click event handling</td>
+      </tr>
+      <tr>
+        <td>ZMM_VENDOR_SCORECARD</td>
+        <td>Report</td>
+        <td>Vendor performance scorecard with on-time delivery percentage</td>
+      </tr>
+      <tr>
+        <td>ZMM_PO_DELIVERY_TRACKER</td>
+        <td>Report</td>
+        <td>Delivery tracking with days-remaining counter and urgency levels</td>
+      </tr>
+    </table>
+
+    <h2>Functional Features</h2>
+    <ul>
+      <li>Selection screen filters for company code, purchasing organization, vendor, purchase order number, material, and purchase order date.</li>
+      <li>Integrated view of PO header and item information with vendor and material descriptions.</li>
+      <li>Delivery schedule enrichment using standard schedule-line data from EKET.</li>
+      <li>Status classification as Deleted, Completed, No Schedule, Overdue, Due Soon, or On Time.</li>
+      <li>Hotspot on purchase order number to navigate to ME23N; double-click on vendor to open XK03.</li>
+      <li>Vendor scorecard with total POs, total value, delivery status breakdown, and on-time percentage.</li>
+      <li>Delivery tracker with days-remaining calculation, urgency assignment, and status-based filtering.</li>
+      <li>Standard ALV features such as sort, filter, layout, and export.</li>
+    </ul>
+
+    <h2>Technical Design</h2>
+    <div class="two-col">
+      <div class="card">
+        <p><strong>Report Name</strong><br>ZMM_PO_ANALYTICS_ALV</p>
+        <p><strong>Language</strong><br>SAP ABAP</p>
+        <p><strong>UI</strong><br>ALV via CL_SALV_TABLE</p>
+      </div>
+      <div class="card">
+        <p><strong>Primary Tables</strong><br>EKKO, EKPO, LFA1, MAKT, EKET</p>
+        <p><strong>Module Context</strong><br>SAP MM Purchasing</p>
+        <p><strong>Execution Type</strong><br>Executable report with includes</p>
+      </div>
+    </div>
+
+    <div class="footer">Page 2</div>
+  </section>
+
+  <section class="page">
+    <h2>Data Flow and Logic</h2>
+    <p>The main report begins by collecting filter values from the selection screen. It reads purchase order data from <strong>EKKO</strong> and <strong>EKPO</strong>, vendor details from <strong>LFA1</strong>, material descriptions from <strong>MAKT</strong>, and schedule-line delivery dates from <strong>EKET</strong>. The records are merged inside the ABAP program using Open SQL joins and prepared for ALV display.</p>
+
+    <p>Status logic is applied item by item. If an item is marked for deletion, the report displays <strong>Deleted</strong>. If delivery is completed, it displays <strong>Completed</strong>. If no schedule line exists, it displays <strong>No Schedule</strong>. When a valid delivery date is available, the report compares it against the current system date to classify the item as <strong>Overdue</strong>, <strong>Due Soon</strong>, or <strong>On Time</strong>.</p>
+
+    <p>The vendor scorecard aggregates item-level data by vendor, counting distinct POs, summing net values, and computing an on-time delivery percentage. The delivery tracker focuses on active items with valid delivery dates, calculating a days-remaining counter and assigning urgency levels (HIGH, MEDIUM, LOW) for quick visual prioritization.</p>
+
+    <h2>Unique Points</h2>
+    <ul>
+      <li>Balanced complexity for an ABAP capstone: practical, working, and explainable.</li>
+      <li>Three complementary reports covering analytics, vendor scoring, and delivery tracking.</li>
+      <li>Modular code design with separate include programs following ABAP conventions.</li>
+      <li>Uses standard SAP MM tables so results can be validated easily in a training system.</li>
+      <li>Combines reporting, event handling, aggregation, and business status calculation.</li>
+      <li>Supports project evaluation and viva discussion with clear feature-to-concept mapping.</li>
+    </ul>
+
+    <h2>Why This Project Is Suitable for an ABAP Developer</h2>
+    <p>This project directly reflects day-to-day ABAP enhancement and reporting work. It demonstrates selection-screen design, Open SQL joins with multiple tables, internal table processing, ALV configuration, local class-based event handling, and business rule implementation. The addition of a vendor scorecard and delivery tracker shows the ability to build related tools within the same functional domain. At the same time, it avoids unnecessary complexity such as custom database modeling or advanced workflow integration, keeping the scope realistic and manageable.</p>
+
+    <div class="callout">
+      <p><strong>Demo tip:</strong> Keep two or three known purchase order numbers ready so you can show both normal items and overdue or due-soon items during the project test. Run the vendor scorecard and delivery tracker with the same data range to demonstrate cross-report consistency.</p>
+    </div>
+
+    <div class="footer">Page 3</div>
+  </section>
+
+  <section class="page">
+    <h2>Screenshots</h2>
+    <p>Replace the following placeholder areas with actual screenshots from your SAP system before final submission.</p>
+
+    <div class="screenshot-box">
+      Selection Screen Screenshot Placeholder<br>
+      Add the SAP selection screen showing report filters
+    </div>
+
+    <div class="screenshot-box">
+      ALV Output Screenshot Placeholder<br>
+      Add a screenshot of the populated ALV report with real purchase order data
+    </div>
+
+    <div class="screenshot-box">
+      PO Drilldown Screenshot Placeholder<br>
+      Add a screenshot showing PO navigation after clicking the hotspot
+    </div>
+
+    <div class="footer">Page 4</div>
+  </section>
+
+  <section class="page">
+    <h2>Tech Stack</h2>
+    <ul>
+      <li>SAP ABAP</li>
+      <li>SAP MM standard purchasing tables (EKKO, EKPO, LFA1, MAKT, EKET)</li>
+      <li>CL_SALV_TABLE for ALV output (ALV Object Model)</li>
+      <li>Modular programming with include programs (TOP, F01, CL)</li>
+      <li>Local ABAP classes for event handling</li>
+      <li>Git and GitHub for source management</li>
+      <li>PowerShell and Python for documentation packaging</li>
+    </ul>
+
+    <h2>Future Improvements</h2>
+    <ul>
+      <li>Add traffic-light icons and color-based status indicators to improve visual monitoring.</li>
+      <li>Add plant-wise summaries and vendor-wise subtotal reporting.</li>
+      <li>Add authorization-based access restrictions using purchasing organization or company code.</li>
+      <li>Add downloadable export variants for Excel reporting.</li>
+      <li>Add user-specific ALV layouts and saved variants.</li>
+      <li>Integrate goods receipt data for three-way match analysis.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>This project provides a practical procurement reporting solution built with standard ABAP techniques and SAP MM data. The combination of a detailed PO analytics report, a vendor performance scorecard, and a delivery tracking tool demonstrates well-rounded ABAP development skills suitable for real-world SAP support and enhancement work. The modular code structure with include programs follows professional ABAP conventions and makes the codebase maintainable and easy to extend.</p>
+
+    <h2>Submission Details</h2>
+    <table class="data-table">
+      <tr><th>Field</th><th>Value</th></tr>
+      <tr><td>Student Name</td><td>Ayush Singh</td></tr>
+      <tr><td>Roll Number</td><td>2305124</td></tr>
+      <tr><td>Program</td><td>B.Tech CSE 2027</td></tr>
+      <tr><td>Project Title</td><td>Purchase Order Analytics and Vendor Overview using Custom ALV Report</td></tr>
+      <tr><td>ABAP Programs</td><td>6 (3 reports + 3 includes)</td></tr>
+      <tr><td>SAP Tables Used</td><td>EKKO, EKPO, LFA1, MAKT, EKET</td></tr>
+    </table>
+
+    <div class="footer">Page 5</div>
+  </section>
+</body>
+</html>
